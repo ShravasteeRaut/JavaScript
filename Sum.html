@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Arguments</title>
+</head>
+<body>
+    <h1>Sum of Arguments</h1>
+        <p id="result"></p>
+<script>
+    function sum(...numbers) {
+        let total = 0;
+        for (let num of numbers) {
+            total += num;
+        }
+        return total;
+    }
+    let answer = sum(5, 10, 15, 20);
+    document.getElementById("result").textContent =
+        "The sum is: " + answer;
+</script>
+
+</body>
+</html>
