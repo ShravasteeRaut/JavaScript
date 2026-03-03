@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Array Project</title>
+</head>
+<body>
+
+<h2>Array Mapping & Sorting</h2>
+<p>Results are shown below:</p>
+
+<div id="output"></div>
+
+<script>
+let numbers = [8 , 3 , 12 , 5 , 1 ];
+
+let mappedArray = numbers.map(function(num) {
+    return num * 2;
+});
+
+let ascending = mappedArray.slice().sort(function(a, b) {
+    return a - b;
+});
+
+let descending = mappedArray.slice().sort(function(a, b) {
+    return b - a;
+});
+
+document.getElementById("output").innerHTML =
+    "Original: " + numbers + "<br>" +
+    "Mapped (x2): " + mappedArray + "<br>" +
+    "Ascending: " + ascending + "<br>" +
+    "Descending: " + descending;
+</script>
+
+</body>
+</html>
