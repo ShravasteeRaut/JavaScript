@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Class Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .box {
+            background-color: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Class & Inheritance Example</h1>
+
+    <div id="output" class="box"></div>
+
+    <script>
+        // Parent Class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            // Normal Method
+            showDetails() {
+                return "Name: " + this.name + "<br>Age: " + this.age;
+            }
+
+            // Static Method
+            static greet() {
+                return "Welcome to the OOP Example!";
+            }
+        }
+
+        // Child Class (without extends)
+        class Student {
+            constructor(name, age, grade) {
+                this.name = name;
+                this.age = age;
+                this.grade = grade;
+            }
+
+            showDetails() {
+                return "Name: " + this.name + "<br>Age: " + this.age;
+            }
+
+            // Child Method
+            showStudentDetails() {
+                return this.showDetails() + "<br>Grade: " + this.grade;
+            }
+        }
+
+        // Access Static Method
+        let message = Person.greet();
+
+        // Create Object of Child Class
+        let student1 = new Student("John", 20, "A");
+
+        // Display Output
+        document.getElementById("output").innerHTML =
+            "<strong>" + message + "</strong><br><br>" +
+            student1.showStudentDetails();
+
+    </script>
+
+</body>
+</html>
