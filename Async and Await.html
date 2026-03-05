@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Async Await Example</title>
+</head>
+<body>
+
+<h2>Async & Await Demo</h2>
+<div id="output"></div>
+
+<script>
+
+    // Asynchronous function
+    async function getUser() {
+
+        // Simulate delay using Promise
+        let promise = new Promise(function(resolve) {
+            setTimeout(function() {
+                resolve("John");
+            }, 2000);
+        });
+
+        let result = await promise; // wait for result
+        return result;
+    }
+
+    // Function dependent on async result
+    async function showUser() {
+
+        let name = await getUser(); // wait for async function
+
+        document.getElementById("output").innerHTML =
+            "User name is: " + name;
+    }
+
+    // Call the function
+    showUser();
+
+</script>
+
+</body>
+</html>
