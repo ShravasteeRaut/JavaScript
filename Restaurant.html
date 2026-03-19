@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Website</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+
+    
+    header {
+      background-color: black;
+      padding: 10px;
+    }
+
+    .navbar button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .navbar button:hover {
+      color: red;
+    }
+
+    
+    .page {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    button.main-btn {
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    
+    img {
+      width: 250px;
+      height: 180px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+
+</head>
+<body>
+
+  
+  <header>
+    <div class="navbar">
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('about')">About</button>
+      <button onclick="showPage('menu')">Menu</button>
+      <button onclick="showPage('food')">Food</button>
+      <button onclick="showPage('gallery')">Gallery</button>
+      <button onclick="showPage('contact')">Contact</button>
+    </div>
+  </header>
+
+  
+  <div id="home" class="page active">
+    <h1>Welcome to My Restaurant</h1>
+    <p>Enjoy delicious food!</p>
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+    <br>
+    <button class="main-btn" onclick="showPage('menu')">View Menu</button>
+  </div>
+
+  
+  <div id="about" class="page">
+    <h1>About Us</h1>
+    <p>We serve fresh and tasty food every day.</p>
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+  </div>
+
+ 
+  <div id="menu" class="page">
+    <h1>Our Menu</h1>
+    <p>Pizza, Burger, Pasta</p>
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+    <img src="https://images.unsplash.com/photo-1543352634-873c4b4f22c7">
+  </div>
+
+
+  <div id="food" class="page">
+    <h1>Popular Food</h1>
+    <p>Biryani, Paneer Tikka, Chicken Curry</p>
+    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+  </div>
+
+
+  <div id="gallery" class="page">
+    <h1>Gallery</h1>
+    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+    <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+  </div>
+
+
+  <div id="contact" class="page">
+    <h1>Contact Us</h1>
+    <p>Email: restaurant@email.com</p>
+    <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2">
+  </div>
+
+  
+  <script>
+    function showPage(pageId) {
+      var pages = document.getElementsByClassName("page");
+
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove("active");
+      }
+
+      document.getElementById(pageId).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
