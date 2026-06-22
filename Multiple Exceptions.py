@@ -15,6 +15,9 @@ except:
 else:
     print("No exceptions")
 
+finally:
+    print("This will execute no matter what")   
+
 
 
 
